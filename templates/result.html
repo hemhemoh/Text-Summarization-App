@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+	<div id="brandname">
+		Summary Generator App
+	</div>
+	<h2>128 words </h2>
+</div>
+<p style="color:blue;font-size:20;text-align: center;"><b>Here is the summary generated</b></p>
+	<div class="results">
+
+
+		<h4>Summarized Text: </h4>
+		<textbox name="output_text" id="output_text" maxlength="500000" style="width:900px; 
+		height:250px">
+
+			<p>{{ my_summary }} </p>
+
+		</textbox>
+		<br>
+	</div>
+</body>
+</html>
