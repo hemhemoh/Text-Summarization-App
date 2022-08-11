@@ -1,6 +1,6 @@
 # Text-Summarization-App
 
-## Prerequisite
+## Introduction
 
 - Abstractive summarization is a technique for creating a summary of a text based on its primary ideas rather than by directly reproducing its most important sentences. This work in natural language processing is crucial and difficult. For this project, the **"Text to Text Transfer Transformer Model"** popularly known as T5 transformers was used to train our [custom dataset](https://www.kaggle.com/datasets/sunnysai12345/news-summary) to enable it give us the abstractive summary of the text data. 
 - T5 transformers was used because it is flexible enough to be fine-tuned for quite a number of important tasks especially **Abstractive Summarization**. T5 has also achieved state-of-the-art result in this field.
@@ -8,11 +8,9 @@
 
 This project aims to sumamrize long text of 512 tokens or lesser, to tokens <= 128 without reproducing the words in the main text and also retaining context. The project was deployed using hugging face spaces with streamlit and this repo also contains a flask app which can be setup locally.
 
-## Project Walkthrough.
-
-### File Folder Structure 
+### Repository Structure 
 **Project files/folders:**
-  <li>Static: This folder contains the css file for the U.I of the flask app<li>
+  <li>Static: This folder contains the css file for the U.I of the flask app</li>
   <li>Template: This folder contains the HTML files for the home and predict page of the flask app</li>
   <li>T5 transformers.ipynb: This is the google colab notebook used for preprocessing the data and fine tuning the model.</li>
   <li>App.py: This is the streamlit file created for the purpose of being the U.I file for the model deployed on hugging face spaces.</li>
@@ -28,8 +26,14 @@ Some of the functions created using pytorch lightning includes:
 <li>NewsSummaryDataset which was used to tokenize and encode the dataset</li>
 <li>NewsSummaryDataModule which ws used to setup the output from the NewsSummaryDataset function and also to load them into dataloaders</li>
 <li>NewsSummaryModel: this is where the version of T5(t5-base) to be used was specified and downloaded. The model architecture was alsp fine tuned for custom dataset here.</li>
-<li>Summary: This function is used to generate summary on a piece of text by the user. This is the function that is used along with the fine-tuned model for deployment.<li>
+<li>Summary: This function is used to generate summary on a piece of text by the user. This is the function that is used along with the fine-tuned model for deployment.</li>
   
+ ## Project Walkthrough.
+ The section aims to give a walkthrough of the [model training](https://github.com/hemhemoh/Text-Summarization-App/blob/main/T5_transformers.ipynb) and the deployment aspect of the project.
+ ### Text preprocessing and Model building
+ 
+ - Setup and library imports: This is the first phase of any Machine learning data and it is at this point we switch to GPU(if necessary), install and import the libraries we need to get the project started(e.g numpy, torch, pytorch lightning). Some of these libraries can be imported/installed later in the project but I prefer to install mine at the beginning of my ipynb notebook.
+ - Getting the dataset from kaggle to google colab
 
   
 ## Limitations
