@@ -38,11 +38,18 @@ Some of the functions created using pytorch lightning includes:
  - Examining the dataframe: The dataframe consists of 6 columns, 4 of which are unnecessary for this task. A new dataframe containing just the text and summary columns was created. 
  - Data cleaning: The column names were changed to relevant names, rows containing null data was dropped as these rows are just few and filling them would be hard.
  - Splitting the dataset into test and train data: The new dataframe created was splitted into train and test column with test_size of 0.1.
- - 
+ - NewsSummaryDataset: This class was created to encode, [tokenize](https://towardsdatascience.com/tokenization-for-natural-language-processing-a179a891bad4#:~:text=Tokenization%20is%20breaking%20the%20raw,the%20sequence%20of%20the%20words), pad and truncate the dataset.This is done with the t5 tokenizer from the T5 model installed.This class also specify the maximum token length for both the text column and the summary column. 
+ - NewsSummaryDataModule: This class applies the function above to our dataset and takes into cognizance the train test split done above.
+ - NewsSummaryModel: This class contains functions that trains and tests the model.
+ - A checkpoint was created for the model and a trainer which was created from our pytorch lightning module was used to fit the data and the model.
+ - A function summarize was created which was used to test the model built. This function takes in the text to be summarized and returns the summary of length <= 128.
 
   
 ## Limitations
-<p> The T5-base model is a very large one and cant be deployed on free cloud platforms because of the size.</p>
+<p> The T5-base model is a very large one and can't be deployed on free cloud platforms because of the size.</p>
+
+## Blockers
+I found it hard building my flask APP with vscode, I am not sure why but I guess dependency was a major issue. Setting it on Pycharm was less challenging and I had to install RUST, CYTHON and one or two other dependencies in the git bash terminal.
 
 **References**
 <li>https://huggingface.co/docs/transformers/model_doc/t5</li>
