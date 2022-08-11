@@ -33,7 +33,12 @@ Some of the functions created using pytorch lightning includes:
  ### Text preprocessing and Model building
  
  - Setup and library imports: This is the first phase of any Machine learning data and it is at this point we switch to GPU(if necessary), install and import the libraries we need to get the project started(e.g numpy, torch, pytorch lightning). Some of these libraries can be imported/installed later in the project but I prefer to install mine at the beginning of my ipynb notebook.
- - Getting the dataset from kaggle to google colab
+ - Getting the dataset from kaggle to google colab: Instead of manualing downloading the dataset this was done by using the kaggle library and the API command of the dataset on kaggle.
+ - Loading the dataset into a dataframe.
+ - Examining the dataframe: The dataframe consists of 6 columns, 4 of which are unnecessary for this task. A new dataframe containing just the text and summary columns was created. 
+ - Data cleaning: The column names were changed to relevant names, rows containing null data was dropped as these rows are just few and filling them would be hard.
+ - Splitting the dataset into test and train data: The new dataframe created was splitted into train and test column with test_size of 0.1.
+ - 
 
   
 ## Limitations
