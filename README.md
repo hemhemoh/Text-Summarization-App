@@ -13,7 +13,20 @@ This project was started by getting a dataset that could work with the T5 transf
 
 **Pytorch-lightning** is the framework used in this project and that's majorly because it helps organize our pytorch code.
 Some of the functions created using pytorch lightning includes:
-<ul></ul>
+<li>NewsSummaryDataset which was used to tokenize and encode the dataset</li>
+<li>NewsSummaryDataModule which ws used to setup the output from the NewsSummaryDataset function and also to load them into dataloaders</li>
+<li>NewsSummaryModel: this is where the version of T5(t5-base) to be used was specified and downloaded. The model architecture was alsp fine tuned for custom dataset here.</li>
+<li>Summary: This function is used to generate summary on a piece of text by the user. This is the function that is used along with the fine-tuned model for deployment.<li>
+  
+**Project files/folders:**
+  <li>Static: This folder contains the css file for the U.I of the flask app<li>
+  <li>Template: This folder contains the HTML files for the home and predict page of the flask app</li>
+  <li>T5 transformers.ipynb: This is the google colab notebook used for preprocessing the data and fine tuning the model.</li>
+  <li>App.py: This is the streamlit file created for the purpose of being the U.I file for the model deployed on hugging face spaces.</li>
+  <li>Main.py:This is the flask file created for the deployment of the model on cloud platforms.</li>
+  
+## Limitations
+<p> The T5-base model is a very large one and cant be deployed on free cloud platforms because of the size.</p>
 
 **References**
 <li>https://huggingface.co/docs/transformers/model_doc/t5</li>
